@@ -10,14 +10,13 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-        <link rel="stylesheet" href="themes/android.min.css" />
-        <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
-        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <link rel="stylesheet" href="">        
+        <link rel="stylesheet" href="includes/css/themes/default/jquery.mobile-1.4.5.min.css">
+        <script src="includes/js/jquery.js"></script>
+        <script src=""></script>
+        <script src="includes/js/jquery.mobile-1.4.5.min.js"></script>
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <script src="incudes/loginsql.js"> </script>
+        <script src="includes/loginsql.js"> </script>
         <script>
                     $(document).on("pagecreate","#login",function(){
                                          
@@ -25,7 +24,7 @@
                         $("#btnlogin").on("tap",function(){
                             validatelogin($('#txtpwd').val(),function(rowcount){
                              //   return rowcount;
-                           //  console.log( 'value of rows ' + rowcount);
+                             console.log( 'value of rows ' + rowcount);
                              if (rowcount>0 )
                            {
                                 $.mobile.changePage("dashboard.html");
@@ -69,6 +68,9 @@
                 </div><!-- /footer -->
             </div>
 
-            
+            <script src="incudes/external/jquery/jquery.js"></script>
+            <script src="incudes/jquery-ui.js"></script>
+                    
     </body>
+
 </html>
