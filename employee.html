@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create employee</title>
+</head>
+<body>
+    <div data-role="page" id="employee">
+        <div data-role="header"  data-position="inline">
+           <h1> Create Employee</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <fieldset>
+                    
+                        <label for="text-basic">First name</label>
+                        <input type="text" autocomplete="off"  maxlength="50" name="fname" id="fname" />
+                        <label for="text-basic">Last name</label>
+                        <input type="text" autocomplete="off" maxlength="50" name="lname" id="lname" />
+                        <label for="text-basic">Father name</label>
+                        <input type="text" autocomplete="off" maxlength="100" name="father" id="father" />
+                        <label for="text-basic">Address name</label> 
+                        <input type="text" autocomplete="off" maxlength="200" multiple="true" name="address" id="address" />                       
+                        <button class="ui-btn ui-btn-a" onclick="">Create</button>
+                </fieldset>
+        </div>
+        <div data-role="footer" data-position="inline" style="bottom: 0;position:absolute;width:100% ">
+            <a href="dashboard.html">Home</a>
+        </div>
+    </div>
+    
+</body>
+</html>

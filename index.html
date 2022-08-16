@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="themes/android.min.css" />
+        <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="incudes/loginsql.js"> </script>
+        <script>
+                    $(document).on("pagecreate","#login",function(){
+                                         
+                        createdatabase();
+                        $("#btnlogin").on("tap",function(){
+                            validatelogin($('#txtpwd').val(),function(rowcount){
+                             //   return rowcount;
+                           //  console.log( 'value of rows ' + rowcount);
+                             if (rowcount>0 )
+                           {
+                                $.mobile.changePage("dashboard.html");
+                           }
+                            else
+                            {
+                                $('#msg').fadeIn();
+                                $('#msg').text('Wrong Password');
+                                $('#msg').fadeOut(1000);
+                            }
+
+                            }
+                            );
+                            });
+                    });
+
+                    
+        </script>
+            
+    </head>
+    <body>
+        <div data-role="page" id="login">
+                <div id="logintoppanel" data-role="header">
+                   <h1> Welcome </h1>
+                   <h3>Login please</h3>
+                   <h1 id="msg"></h1>
+                </div>
+                <div id="loginform" >                    
+                    <div style="position: relative;transform: translate(-50%,-50%);left:50%;top: 50%;">
+                        <label for="text-basic">Secret code</label>
+                        <input type="password" name="text-basic" id="txtpwd" value="123">                        
+                        <button class="ui-btn ui-btn-a" id="btnlogin" ">Login</button>
+                        <a href="dashboard.html"  class="ui-btn">Go to Page Dashboard</a>
+                    </div>
+                </div>
+                <div style="position: relative;">
+                        
+                </div>
+                <div style="bottom:0 ;position: absolute;width: 100%;text-align: center;background-color: #dcdcdc;">
+                    <h4>Page Footer</h4>
+                </div><!-- /footer -->
+            </div>
+
+            
+    </body>
+</html>

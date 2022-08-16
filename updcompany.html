@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="themes/android.min.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="incudes/loginsql.js"> </script>
+    <title>Update Company Code</title>
+    <script>
+        $(document).on('pagecreate','#Company',  function(){ 
+            alert('hello');
+            console.log('Pagecalled.');             
+            readCompanyCode(function(ccode)
+            {
+                console.log('Pagecalled.');
+                $('#ccode').val(ccode); 
+            }
+            );
+        });
+        </script>
+</head>
+<body>
+    <div data-role="page" id="Company">
+        <div data-role="header"  data-position="inline">
+           <h1> Update Company code</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <fieldset>
+                <label for="text-basic">Change the Company code</label>
+                        <input type="text" autocomplete="off"  maxlength="10" name="ccode" id="ccode"  />
+                        <button class="ui-btn ui-btn-a" id="updateCompany">Save</button>
+                        
+            </fieldset>
+        </div>
+        <div data-role="footer" data-position="inline" style="bottom: 0;position:absolute;width:100% ">            
+            <a href="dashboard.html">Home</a>
+        </div>
+    </div>
+</body>
+</html>
